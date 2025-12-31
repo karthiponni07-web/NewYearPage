@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy New Year</title>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #001f3f, #003366);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Content */
+.container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 50px 20px 80px;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+img {
+  margin-top: 30px;
+  max-width: 90%;
+  border-radius: 15px;
+}
+
+/* Bubble animation */
+.bubble {
+  position: fixed;
+  top: -80px;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: floatDown linear infinite;
+  z-index: 1;
+}
+
+@keyframes floatDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(120vh);
+  }
+}
+
+img{
+    width: 150px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>🎉 Happy New Year! 🎉</h1>
+
+  <p>
+    May this New Year bring happiness, peace,<br>
+    and success to you and your loved ones ✨
+  </p>
+
+  <p>
+    Wishing you a bright and joyful year ahead 🥳
+  </p>
+
+  <!-- YOUR IMAGE -->
+  <img src="./images/IMG20251012153050.jpg" alt="New Year Image">
+</div>
+
+<script>
+// Multi-color bubbles
+const colors = [
+  "rgba(255,255,255,0.6)",
+  "rgba(255,99,132,0.6)",
+  "rgba(54,162,235,0.6)",
+  "rgba(255,206,86,0.6)",
+  "rgba(153,102,255,0.6)",
+  "rgba(75,192,192,0.6)"
+];
+
+const bubbleCount = 30;
+
+for (let i = 0; i < bubbleCount; i++) {
+  const bubble = document.createElement("div");
+  const size = Math.random() * 40 + 15;
+
+  bubble.classList.add("bubble");
+  bubble.style.width = size + "px";
+  bubble.style.height = size + "px";
+  bubble.style.left = Math.random() * 100 + "vw";
+  bubble.style.background =
+    colors[Math.floor(Math.random() * colors.length)];
+  bubble.style.animationDuration = Math.random() * 8 + 6 + "s";
+  bubble.style.animationDelay = Math.random() * 5 + "s";
+
+  document.body.appendChild(bubble);
+}
+</script>
+
+</body>
+</html>
